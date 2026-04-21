@@ -59,8 +59,8 @@ const members = [
     name: "Hafis Maulana",
     role: "Anggota Kelas",
     rank: 8,
-    hobby: "Mencoba konsep baru dan belajar mandiri",
-    humor: "ceria",
+    hobby: "Mencoba konsep baru dan belajar mandiri (hoax)",
+    humor: "CABUL",
     bio: "Hafis Maulana termasuk anggota kelas XII RPL 1 yang terdata dalam daftar resmi.",
   },
   {
