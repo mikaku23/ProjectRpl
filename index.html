@@ -1,289 +1,170 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Kelas</title>
-  <style>
-    :root {
-      --bg: #0f172a;
-      --card: #111827;
-      --accent: #22c55e;
-      --text: #e5e7eb;
-      --sub: #9ca3af;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      padding: 15px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-
-    h1 {
-      font-size: 20px;
-    }
-
-    .search {
-      padding: 10px 12px;
-      border-radius: 8px;
-      border: none;
-      background: var(--card);
-      color: white;
-      width: 250px;
-      max-width: 100%;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-    }
-
-    .card {
-      background: var(--card);
-      padding: 15px;
-      border-radius: 12px;
-      transition: 0.3s;
-      cursor: pointer;
-      position: relative;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border: 1px solid var(--accent);
-    }
-
-    .card h3 {
-      margin-bottom: 8px;
-      font-size: 16px;
-    }
-
-    .card p {
-      color: var(--sub);
-      font-size: 13px;
-    }
-
-    .badge {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: var(--accent);
-      color: black;
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-size: 11px;
-    }
-
-    .modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.7);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      visibility: hidden;
-      opacity: 0;
-      transition: 0.3s;
-      padding: 10px;
-    }
-
-    .modal.active {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    .modal-content {
-      background: var(--card);
-      padding: 20px;
-      border-radius: 12px;
-      width: 100%;
-      max-width: 400px;
-    }
-
-    .close {
-      float: right;
-      cursor: pointer;
-      color: var(--sub);
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .stat-box {
-      background: var(--card);
-      padding: 12px;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    .stat-box h2 {
-      color: var(--accent);
-      font-size: 18px;
-    }
-
-    .stat-box p {
-      font-size: 12px;
-      color: var(--sub);
-    }
-
-    /* RESPONSIVE BREAKPOINTS */
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 18px;
-      }
-
-      .search {
-        width: 100%;
-      }
-
-      .card {
-        padding: 12px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      body {
-        padding: 10px;
-      }
-
-      .card h3 {
-        font-size: 14px;
-      }
-
-      .card p {
-        font-size: 12px;
-      }
-
-      .stat-box h2 {
-        font-size: 16px;
-      }
-    }
-
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XII RPL 1 | Dashboard Kelas</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="page-bg"></div>
 
-<div class="container">
-  <header>
-    <h1>Dashboard Kelas</h1>
-    <input type="text" id="search" class="search" placeholder="Cari siswa...">
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark">XII</span>
+      <div>
+        <h1>XII RPL 1</h1>
+        <p>Dashboard data kelas yang statis, responsif, dan elegan</p>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="#dashboard" class="nav-link active" data-section="dashboard">Dashboard</a>
+      <a href="#tentang" class="nav-link" data-section="tentang">Tentang</a>
+      <a href="#prestasi" class="nav-link" data-section="prestasi">Prestasi</a>
+      <a href="#anggota" class="nav-link" data-section="anggota">Anggota</a>
+    </nav>
   </header>
 
-  <div class="stats">
-    <div class="stat-box">
-      <h2 id="totalSiswa">0</h2>
-      <p>Total</p>
-    </div>
-    <div class="stat-box">
-      <h2 id="lulus">0</h2>
-      <p>Lulus</p>
-    </div>
-    <div class="stat-box">
-      <h2 id="tidakLulus">0</h2>
-      <p>Tidak</p>
+  <main>
+    <section id="dashboard" class="section hero-section">
+      <div class="section-heading">
+        <span class="eyebrow">Dashboard Kelas</span>
+        <h2>Struktur kelas, profil, dan identitas anggota</h2>
+        <p>
+          Tampilan ini menampilkan setiap siswa dalam kartu individual. Empat posisi utama ditandai
+          sebagai pin utama kelas, sedangkan anggota lain ditampilkan sebagai bagian dari struktur lengkap.
+        </p>
+      </div>
+
+      <div class="stats-row">
+        <article class="stat-card glass">
+          <span>Total Siswa</span>
+          <strong id="stat-total">21</strong>
+        </article>
+        <article class="stat-card glass">
+          <span>Pin Utama</span>
+          <strong>4</strong>
+        </article>
+        <article class="stat-card glass">
+          <span>Anggota</span>
+          <strong id="stat-member">17</strong>
+        </article>
+      </div>
+
+      <div class="card-grid" id="dashboard-grid"></div>
+    </section>
+
+    <section id="tentang" class="section">
+      <div class="section-heading">
+        <span class="eyebrow">Tentang</span>
+        <h2>Kerangka informasi kelas</h2>
+        <p>
+          Kelas XII RPL 1 berisi siswa yang mempelajari pengembangan perangkat lunak, logika pemrograman,
+          desain antarmuka, serta proses kerja yang rapi dan terstruktur. Di dalam kelas seperti ini,
+          pembagian peran penting untuk menjaga alur belajar tetap jelas, tanggung jawab tetap terbagi,
+          dan hasil kerja dapat dipantau dengan mudah.
+        </p>
+      </div>
+
+      <div class="two-column">
+        <article class="glass info-card">
+          <h3>Fokus pembelajaran</h3>
+          <p>
+            Materi yang dibahas dapat mencakup pemrograman web, basis data, rancangan sistem, pengujian,
+            dan penyusunan dokumen proyek. Pola kerja seperti ini membentuk kebiasaan berpikir sistematis.
+          </p>
+        </article>
+        <article class="glass info-card">
+          <h3>Karakter kelas</h3>
+          <p>
+            Struktur kelas yang baik tidak hanya dinilai dari nilai, tetapi juga dari konsistensi, disiplin,
+            dan kemampuan bekerja sama. Karena itu, tampilan ini dibuat untuk menonjolkan identitas kelas
+            secara informatif dan tetap modern.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="prestasi" class="section">
+      <div class="section-heading">
+        <span class="eyebrow">Prestasi</span>
+        <h2>Ringkasan pencapaian kelas</h2>
+        <p>
+          Bagian ini masih berupa kerangka. Isinya dapat diisi data lomba, proyek, presentasi kelas,
+          kontribusi kelompok, atau penghargaan lain yang pernah diraih oleh XII RPL 1.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <article class="glass timeline-card">
+          <span class="timeline-dot"></span>
+          <h3>Prestasi 01</h3>
+          <p>Menunjukkan kemampuan menyelesaikan proyek dengan struktur rapi dan alur kerja yang jelas.</p>
+        </article>
+        <article class="glass timeline-card">
+          <span class="timeline-dot"></span>
+          <h3>Prestasi 02</h3>
+          <p>Aktif dalam tugas kelompok, presentasi kelas, dan penyusunan hasil kerja yang konsisten.</p>
+        </article>
+        <article class="glass timeline-card">
+          <span class="timeline-dot"></span>
+          <h3>Prestasi 03</h3>
+          <p>Memiliki budaya belajar yang terarah, sehingga hasil kerja dapat dipertanggungjawabkan.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="anggota" class="section">
+      <div class="section-heading">
+        <span class="eyebrow">Anggota</span>
+        <h2>Seluruh data siswa kelas XII RPL 1</h2>
+        <p>
+          Bagian ini menampilkan seluruh siswa tanpa membedakan pin utama. Urutan tetap mempertahankan
+          penandaan pada dashboard, tetapi daftar anggota di bawah ini menyajikan struktur lengkap kelas.
+        </p>
+      </div>
+
+      <div class="member-list glass" id="member-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>made by XII RPL 1</p>
+  </footer>
+
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
+    <div class="modal glass" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+      <button class="modal-close" id="modal-close" aria-label="Tutup">X</button>
+      <div class="modal-body">
+        <div class="modal-image-wrap">
+          <img id="modal-image" alt="Foto siswa" />
+        </div>
+        <div class="modal-content">
+          <span class="modal-badge" id="modal-role"></span>
+          <h3 id="modal-name"></h3>
+          <p class="modal-sub" id="modal-nickname"></p>
+
+          <div class="detail-grid">
+            <div class="detail-box">
+              <span>Hobi</span>
+              <strong id="modal-hobby"></strong>
+            </div>
+            <div class="detail-box">
+              <span>Humor</span>
+              <strong id="modal-humor"></strong>
+            </div>
+          </div>
+
+          <div class="detail-note">
+            <h4>Data diri</h4>
+            <p id="modal-bio"></p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="grid" id="list"></div>
-</div>
-
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">X</span>
-    <h2 id="detailNama"></h2>
-    <p id="detailInfo"></p>
-  </div>
-</div>
-
-<script>
-const data = [
-  {nama: "Ahmad", kelas: "XII RPL 1", nilai: 85},
-  {nama: "Budi", kelas: "XII RPL 1", nilai: 60},
-  {nama: "Citra", kelas: "XII RPL 2", nilai: 90},
-  {nama: "Dina", kelas: "XII RPL 2", nilai: 70},
-  {nama: "Eko", kelas: "XII RPL 3", nilai: 50},
-];
-
-const list = document.getElementById("list");
-const search = document.getElementById("search");
-
-function render(dataFilter = data) {
-  list.innerHTML = "";
-
-  let lulus = 0;
-  let tidak = 0;
-
-  dataFilter.forEach((siswa) => {
-    const status = siswa.nilai >= 75 ? "Lulus" : "Tidak";
-
-    if(status === "Lulus") lulus++;
-    else tidak++;
-
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <span class="badge">${status}</span>
-      <h3>${siswa.nama}</h3>
-      <p>${siswa.kelas}</p>
-      <p>Nilai: ${siswa.nilai}</p>
-    `;
-
-    card.onclick = () => showDetail(siswa);
-    list.appendChild(card);
-  });
-
-  document.getElementById("totalSiswa").innerText = dataFilter.length;
-  document.getElementById("lulus").innerText = lulus;
-  document.getElementById("tidakLulus").innerText = tidak;
-}
-
-function showDetail(siswa) {
-  document.getElementById("detailNama").innerText = siswa.nama;
-  document.getElementById("detailInfo").innerText = `Kelas: ${siswa.kelas} | Nilai: ${siswa.nilai}`;
-  document.getElementById("modal").classList.add("active");
-}
-
-function closeModal() {
-  document.getElementById("modal").classList.remove("active");
-}
-
-search.addEventListener("input", () => {
-  const keyword = search.value.toLowerCase();
-  const filtered = data.filter(d => d.nama.toLowerCase().includes(keyword));
-  render(filtered);
-});
-
-render();
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
