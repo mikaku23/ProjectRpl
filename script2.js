@@ -58,25 +58,40 @@ function renderSpotlightCards() {
 
   const cards = spotlightTrack.querySelectorAll(".spotlight-card");
 
+  let isDragging = false;
+
+  // deteksi drag (mobile + desktop)
+  if (rail) {
+    rail.addEventListener("touchstart", () => {
+      isDragging = false;
+    });
+
+    rail.addEventListener("touchmove", () => {
+      isDragging = true;
+    });
+  }
+
   cards.forEach((card) => {
     card.addEventListener("click", (e) => {
+      // kalau habis drag → abaikan click
+      if (isDragging) return;
+
       e.stopPropagation();
 
       const isActive = card.classList.contains("active");
 
-      // kalau sudah aktif → matikan (toggle OFF)
       if (isActive) {
+        // toggle OFF
         card.classList.remove("active");
-        return;
+      } else {
+        // aktifkan satu saja
+        cards.forEach((item) => item.classList.remove("active"));
+        card.classList.add("active");
       }
-
-      // kalau belum → aktifkan dan matikan lainnya
-      cards.forEach((item) => item.classList.remove("active"));
-      card.classList.add("active");
     });
   });
 
-  // klik di luar card → reset semua
+  // klik luar → reset
   document.addEventListener("click", (e) => {
     if (!e.target.closest(".spotlight-card")) {
       cards.forEach((c) => c.classList.remove("active"));

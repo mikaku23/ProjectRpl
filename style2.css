@@ -218,3 +218,8 @@
   transform: translateY(20px);
   opacity: 0;
 }
+
+.spotlight-rail {
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+}
