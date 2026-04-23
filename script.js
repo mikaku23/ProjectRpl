@@ -298,25 +298,35 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeModal();
 });
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const activeId = entry.target.id;
-        navLinks.forEach((link) => {
-          link.classList.toggle("active", link.dataset.section === activeId);
-        });
-      }
-    });
-  },
-  {
-    root: null,
-    threshold: 0.45,
-    rootMargin: "-12% 0px -55% 0px"
-  }
-);
+function setActiveLink(id) {
+  navLinks.forEach((link) => {
+    link.classList.toggle("active", link.dataset.section === id);
+  });
+}
 
-sections.forEach(section => observer.observe(section));
+function onScroll() {
+  const scrollPos = window.scrollY;
+
+  // tinggi header + sedikit offset biar akurat
+  const headerOffset = document.querySelector(".site-header").offsetHeight + 10;
+
+  let currentSection = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - headerOffset;
+    const sectionBottom = sectionTop + section.offsetHeight;
+
+    if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+      currentSection = section.id;
+    }
+  });
+
+  if (currentSection) {
+    setActiveLink(currentSection);
+  }
+}
+
+window.addEventListener("scroll", onScroll);
 
 renderDashboard();
 renderMemberList();
