@@ -203,3 +203,18 @@
 .spotlight-card.active::after {
   opacity: 1;
 }
+/* PRIORITAS ACTIVE DI ATAS HOVER */
+.spotlight-card.active:hover .spotlight-text {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* SAAT TIDAK ACTIVE, hover tetap normal */
+.spotlight-card:not(.active):hover .spotlight-text {
+  transform: translateY(0);
+  opacity: 1;
+}
+.spotlight-card:not(.active):not(:hover) .spotlight-text {
+  transform: translateY(20px);
+  opacity: 0;
+}
