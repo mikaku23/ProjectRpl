@@ -59,8 +59,8 @@ const members = [
     name: "Hafis Maulana",
     role: "Anggota Kelas",
     rank: 8,
-    hobby: "Mencoba konsep baru dan belajar mandiri (hoax)",
-    humor: "CABUL",
+    hobby: "Mencoba konsep baru dan belajar mandiri",
+    humor: "ceria",
     bio: "Hafis Maulana termasuk anggota kelas XII RPL 1 yang terdata dalam daftar resmi.",
   },
   {
@@ -166,13 +166,11 @@ const members = [
     hobby: "Membuat ringkasan dan mengecek detail",
     humor: "ceria",
     bio: "Naila Aisyah Rinaldi menutup daftar siswa lengkap XII RPL 1 pada tampilan ini.",
-  }
+  },
 ];
 
 const dashboardGrid = document.getElementById("dashboard-grid");
 const memberList = document.getElementById("member-list");
-const navLinks = document.querySelectorAll(".nav-link");
-const sections = document.querySelectorAll("main .section");
 const modalBackdrop = document.getElementById("modal-backdrop");
 const modalClose = document.getElementById("modal-close");
 const modalImage = document.getElementById("modal-image");
@@ -190,15 +188,17 @@ function initials(name) {
     .split(" ")
     .filter(Boolean)
     .slice(0, 2)
-    .map(part => part[0].toUpperCase())
+    .map((part) => part[0].toUpperCase())
     .join("");
 }
 
 function avatarSvg(name, variant = "bg") {
   const ini = initials(name);
   const safe = encodeURIComponent(name);
-  const bg = variant === "bg"
-    ? `
+
+  const bg =
+    variant === "bg"
+      ? `
       <defs>
         <linearGradient id="g-${safe}" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#8b5cf6"/>
@@ -211,7 +211,7 @@ function avatarSvg(name, variant = "bg") {
       <text x="50%" y="56%" text-anchor="middle" font-size="132" font-weight="800" fill="#ffffff" font-family="Arial, sans-serif">${ini}</text>
       <text x="50%" y="75%" text-anchor="middle" font-size="28" font-weight="600" fill="rgba(255,255,255,0.88)" font-family="Arial, sans-serif">XII RPL 1</text>
     `
-    : `
+      : `
       <rect width="512" height="512" rx="88" fill="transparent"/>
       <circle cx="256" cy="168" r="86" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="14"/>
       <path d="M130 408c18-78 72-118 126-118s108 40 126 118" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="14" stroke-linecap="round"/>
@@ -250,7 +250,9 @@ function renderDashboard() {
 }
 
 function renderMemberList() {
-  memberList.innerHTML = members.map(member => `
+  memberList.innerHTML = members
+    .map(
+      (member) => `
     <div class="member-row">
       <img src="${avatarSvg(member.name, "plain")}" alt="${member.name}" />
       <div class="row-text">
@@ -258,7 +260,9 @@ function renderMemberList() {
         <p>${member.role} · ${member.humor}</p>
       </div>
     </div>
-  `).join("");
+  `,
+    )
+    .join("");
 }
 
 function openModal(member) {
@@ -282,10 +286,10 @@ function closeModal() {
 
 document.addEventListener("click", (event) => {
   const card = event.target.closest(".member-card");
-  if (card) {
-    const member = members.find(item => item.name === card.dataset.name);
-    if (member) openModal(member);
-  }
+  if (!card) return;
+
+  const member = members.find((item) => item.name === card.dataset.name);
+  if (member) openModal(member);
 });
 
 modalClose.addEventListener("click", closeModal);
@@ -297,36 +301,6 @@ modalBackdrop.addEventListener("click", (event) => {
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeModal();
 });
-
-function setActiveLink(id) {
-  navLinks.forEach((link) => {
-    link.classList.toggle("active", link.dataset.section === id);
-  });
-}
-
-function onScroll() {
-  const scrollPos = window.scrollY;
-
-  // tinggi header + sedikit offset biar akurat
-  const headerOffset = document.querySelector(".site-header").offsetHeight + 10;
-
-  let currentSection = "";
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - headerOffset;
-    const sectionBottom = sectionTop + section.offsetHeight;
-
-    if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
-      currentSection = section.id;
-    }
-  });
-
-  if (currentSection) {
-    setActiveLink(currentSection);
-  }
-}
-
-window.addEventListener("scroll", onScroll);
 
 renderDashboard();
 renderMemberList();
