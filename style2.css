@@ -179,3 +179,27 @@
     font-size: 0.8rem;
   }
 }
+/* ===== Active State (CLICK) ===== */
+.spotlight-card.active {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+}
+
+.spotlight-card.active img {
+  transform: scale(1.12);
+  filter: blur(2px) brightness(0.8);
+}
+
+.spotlight-card.active::before {
+  opacity: 0.9;
+  backdrop-filter: blur(4px);
+}
+
+.spotlight-card.active .spotlight-text {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.spotlight-card.active::after {
+  opacity: 1;
+}

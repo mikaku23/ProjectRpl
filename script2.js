@@ -1,6 +1,7 @@
 const spotlightTrack = document.getElementById("spotlight-track");
 const navLinks = document.querySelectorAll(".nav-link");
 const sections = document.querySelectorAll("main .section");
+const rail = document.querySelector(".spotlight-rail");
 
 const spotlightCards = [
   {
@@ -53,15 +54,18 @@ function buildSpotlightCard(item) {
 function renderSpotlightCards() {
   if (!spotlightTrack) return;
 
-  const loopItems = [...spotlightCards, ...spotlightCards];
-  spotlightTrack.innerHTML = loopItems.map(buildSpotlightCard).join("");
+  spotlightTrack.innerHTML = spotlightCards.map(buildSpotlightCard).join("");
 
   const cards = spotlightTrack.querySelectorAll(".spotlight-card");
 
   cards.forEach((card) => {
     card.addEventListener("click", () => {
       const isActive = card.classList.contains("active");
+
+      // reset semua
       cards.forEach((item) => item.classList.remove("active"));
+
+      // toggle
       if (!isActive) {
         card.classList.add("active");
       }
@@ -69,6 +73,7 @@ function renderSpotlightCards() {
   });
 }
 
+/* ===== NAV SCROLL ACTIVE ===== */
 function setActiveLink(id) {
   navLinks.forEach((link) => {
     link.classList.toggle("active", link.dataset.section === id);
@@ -77,7 +82,8 @@ function setActiveLink(id) {
 
 function onScroll() {
   const scrollPos = window.scrollY;
-  const headerOffset = document.querySelector(".site-header").offsetHeight + 10;
+  const header = document.querySelector(".site-header");
+  const headerOffset = header ? header.offsetHeight + 10 : 0;
 
   let currentSection = "";
 
@@ -95,35 +101,37 @@ function onScroll() {
   }
 }
 
+/* ===== DRAG SCROLL ===== */
+if (rail) {
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  rail.addEventListener("mousedown", (e) => {
+    isDown = true;
+    rail.classList.add("dragging");
+    startX = e.pageX - rail.offsetLeft;
+    scrollLeft = rail.scrollLeft;
+  });
+
+  rail.addEventListener("mouseleave", () => {
+    isDown = false;
+  });
+
+  rail.addEventListener("mouseup", () => {
+    isDown = false;
+  });
+
+  rail.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - rail.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    rail.scrollLeft = scrollLeft - walk;
+  });
+}
+
+/* ===== INIT ===== */
 window.addEventListener("scroll", onScroll);
 renderSpotlightCards();
 onScroll();
-
-let isDown = false;
-let startX;
-let scrollLeft;
-
-const rail = document.querySelector(".spotlight-rail");
-
-rail.addEventListener("mousedown", (e) => {
-  isDown = true;
-  rail.classList.add("dragging");
-  startX = e.pageX - rail.offsetLeft;
-  scrollLeft = rail.scrollLeft;
-});
-
-rail.addEventListener("mouseleave", () => {
-  isDown = false;
-});
-
-rail.addEventListener("mouseup", () => {
-  isDown = false;
-});
-
-rail.addEventListener("mousemove", (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - rail.offsetLeft;
-  const walk = (x - startX) * 1.5;
-  rail.scrollLeft = scrollLeft - walk;
-});
