@@ -6,6 +6,7 @@
   <title>XII RPL 1 | Dashboard Kelas</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="style2.css" />
+  <link rel="stylesheet" href="stylePrestasi.css" />
 </head>
 <body>
   <div class="page-bg"></div>
@@ -104,34 +105,43 @@
       </div>
     </section>
 
+    <!-- PRESTASI -->
     <section id="prestasi" class="section">
       <div class="section-heading">
         <span class="eyebrow">Prestasi</span>
-        <h2>Ringkasan pencapaian kelas</h2>
+        <h2>Pencapaian kelas</h2>
         <p>
-          Bagian ini masih berupa kerangka. Isinya dapat diisi data lomba, proyek, presentasi kelas,
-          kontribusi kelompok, atau penghargaan lain yang pernah diraih oleh XII RPL 1.
+          Menampilkan pencapaian dalam bentuk kartu interaktif.
         </p>
       </div>
 
-      <div class="timeline">
-        <article class="glass timeline-card">
-          <span class="timeline-dot"></span>
-          <h3>Prestasi 01</h3>
-          <p>Menunjukkan kemampuan menyelesaikan proyek dengan struktur rapi dan alur kerja yang jelas.</p>
-        </article>
-        <article class="glass timeline-card">
-          <span class="timeline-dot"></span>
-          <h3>Prestasi 02</h3>
-          <p>Aktif dalam tugas kelompok, presentasi kelas, dan penyusunan hasil kerja yang konsisten.</p>
-        </article>
-        <article class="glass timeline-card">
-          <span class="timeline-dot"></span>
-          <h3>Prestasi 03</h3>
-          <p>Memiliki budaya belajar yang terarah, sehingga hasil kerja dapat dipertanggungjawabkan.</p>
-        </article>
+      <div class="prestasi-section glass">
+        <div class="prestasi-head">
+          <span class="eyebrow">Prestasi Kelas</span>
+          <h3>Total 16 Prestasi Kelas XI/XII RPL 1</h3>
+          <p>Klik kartu untuk melihat detail.</p>
+        </div>
+
+        <div class="prestasi-rail">
+          <div class="prestasi-track" id="prestasi-track"></div>
+        </div>
       </div>
     </section>
+
+    <!-- MODAL PRESTASI -->
+    <div class="prestasi-modal-backdrop" id="prestasi-modal-backdrop" aria-hidden="true">
+      <div class="prestasi-modal glass" role="dialog" aria-modal="true">
+        <button class="prestasi-modal-close" id="prestasi-modal-close">X</button>
+
+        <div class="prestasi-modal-head">
+          <span id="prestasi-modal-label"></span>
+          <h3 id="prestasi-modal-title"></h3>
+          <p id="prestasi-modal-desc"></p>
+        </div>
+
+        <div class="prestasi-modal-grid" id="prestasi-modal-grid"></div>
+      </div>
+    </div>
 
     <section id="anggota" class="section">
       <div class="section-heading">
@@ -185,5 +195,6 @@
 
   <script src="script.js"></script>
   <script src="script2.js"></script>
+  <script src="scriptPrestasi.js"></script>
 </body>
 </html>
