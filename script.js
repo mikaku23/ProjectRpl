@@ -252,12 +252,10 @@ function getMemberImage(member, variant = "bg") {
 }
 
 function memberCard(member) {
-  const isPin = pinurutans.has(member.urutan);
   return `
     <article class="member-card glass" data-name="${member.name}">
       <div class="member-card__bg">
         <img class="member-avatar" src="${getMemberImage(member, "bg")}" alt="${member.name}" />
-        <span class="member-urutan ${isPin ? "pin" : ""}">${isPin ? "PIN " + member.urutan : "#" + member.urutan}</span>
       </div>
       <div class="member-info">
         <h3>${member.name}</h3>

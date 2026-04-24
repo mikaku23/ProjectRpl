@@ -242,8 +242,8 @@ main {
   background: linear-gradient(135deg, rgba(139, 92, 246, 0.88), rgba(56, 189, 248, 0.68));
   position: relative;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
 }
 
 .member-card__bg::after {
@@ -266,21 +266,9 @@ main {
   box-shadow: 0 16px 35px rgba(0, 0, 0, 0.22);
 }
 
-.member-rank {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: rgba(8, 13, 28, 0.24);
-  color: rgba(255,255,255,0.94);
-  font-size: 0.8rem;
-  position: relative;
-  z-index: 1;
-}
-
+.member-rank,
 .member-rank.pin {
-  background: rgba(255, 255, 255, 0.16);
+  display: none;
 }
 
 .member-info {
@@ -679,14 +667,6 @@ body.modal-open {
     width: 64px;
     height: 64px;
     border-radius: 18px;
-  }
-
-  .member-rank {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    font-size: 0.7rem;
-    padding: 4px 8px;
   }
 
   .member-info {
