@@ -24,6 +24,8 @@ const members = [
     hobby: "Menulis, menghafal",
     humor: "Ceria, peduli",
     bio: "Nadya Febriasari berperan mencatat dan merapikan informasi agar administrasi kelas tetap tertata.",
+    image: "foto/nadya.jpeg", // untuk card
+    imageModal: "foto/nadya-bg.png",
   },
   {
     name: "Syarifah Shabrina",
@@ -31,7 +33,7 @@ const members = [
     urutan: 4,
     hobby: "Public speaking, management",
     humor: "Aktif, komunikatif",
-    bio: "Syarifah Sabrina bertanggung jawab menjaga pencatatan dana dan keuangan kelas tetap jelas.",
+    bio: "Tempat setor uang + pusat kendali keuangan kelas. Dari kumpul dana, booking, sampai pembayaran biar aku yang urus, kalian tinggal nikmatin acara. Intinya kalian yang patungan, saya yang pusing",
     image: "foto/sabrina.jpeg", // untuk card
     imageModal: "foto/sabrina-bg.png",
   },
@@ -62,6 +64,8 @@ const members = [
     hobby: "Olahraga, praktik",
     humor: "Ceria, ramah",
     bio: "Alvin Marliansyah menjadi bagian dari anggota yang mendukung aktivitas kelas.",
+    image: "foto/alpin.jpeg", // untuk card
+    imageModal: "foto/alpin-bg.png",
   },
   {
     name: "Hafiz Maulana",
@@ -98,6 +102,8 @@ const members = [
     hobby: "Memahami materi, berhitung",
     humor: "Teliti, mandiri",
     bio: "Salwa Khalisha tercantum sebagai anggota kelas dengan tampilan kartu individual.",
+    image: "foto/salwa.jpeg", // untuk card
+    imageModal: "foto/salwa-bg.png",
   },
   {
     name: "T Rizka Namira",
@@ -111,9 +117,11 @@ const members = [
     name: "Nadya Kaputri",
     role: "Anggota Kelas",
     urutan: 13,
-    hobby: "Memahami materi, berhitung",
+    hobby: "Memahami materi, Kesenian",
     humor: "Cerdas, kreatif dan ceria",
     bio: "Nadia Kaputri menempati satu kartu khusus pada tampilan anggota kelas.",
+    image: "foto/kaput.jpeg", // untuk card
+    imageModal: "foto/kaput-bg.png",
   },
   {
     name: "Sri Mutia Wahyuni",
@@ -261,7 +269,7 @@ function memberCard(member) {
         <h3>${member.name}</h3>
         <p>${member.role}</p>
         <div class="tag-row">
-          <span class="tag">Humor: ${member.humor}</span>
+          <span class="tag">Karakter: ${member.humor}</span>
           <span class="tag">Keahlian: ${member.hobby}</span>
         </div>
       </div>
