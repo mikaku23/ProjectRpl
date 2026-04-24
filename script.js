@@ -32,7 +32,7 @@ const members = [
     role: "Bendahara",
     urutan: 4,
     hobby: "Public speaking, management",
-    humor: "Aktif, komunikatif",
+    humor: "Aktif, komunikatif, ENTP",
     bio: "Tempat setor uang + pusat kendali keuangan kelas. Dari kumpul dana, booking, sampai pembayaran biar aku yang urus, kalian tinggal nikmatin acara. Intinya kalian yang patungan, saya yang pusing",
     image: "foto/sabrina.jpeg", // untuk card
     imageModal: "foto/sabrina-bg.png",
