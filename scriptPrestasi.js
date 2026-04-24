@@ -16,15 +16,15 @@ const prestasiGroups = [
     items: [
       {
         image: "foto/p1.jpeg",
-        name: "Juara 1 Monolog",
-        competition: "FLS2N SMK/SMA Tahun 2025",
-        award: "12 Juli 2025",
-      },
-      {
-        image: "foto/p2.jpeg",
         name: "Duta Lingkungan Kabupaten Aceh Tamiang Putri",
         competition: "Duta Siswa/Siswi Kabupaten Aceh Tamiang",
         award: "15 Agustus 2024",
+      },
+      {
+        image: "foto/p2.jpeg",
+        name: "Juara 1 Monolog",
+        competition: "FLS2N SMK/SMA Tahun 2025",
+        award: "12 Juli 2025",
       },
     ],
   },

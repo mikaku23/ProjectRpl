@@ -295,9 +295,30 @@
   gap: 14px;
   overflow: auto;
   padding-right: 6px;
-  max-height: calc(100vh - 180px);
+
+  /* FIX UTAMA */
+  padding-bottom: 80px;
+
   align-content: start;
   scroll-behavior: smooth;
+
+  max-height: calc(100vh - 120px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+
+  .prestasi-modal-grid {
+    grid-template-columns: 1fr;
+
+    /* FIX MOBILE (konsisten, tidak double) */
+    max-height: calc(100vh - 120px);
+    padding-bottom: 100px;
+
+    gap: 10px;
+    padding-right: 0;
+  }
+
 }
 
 /* ===== Adaptif saat item sedikit ===== */
