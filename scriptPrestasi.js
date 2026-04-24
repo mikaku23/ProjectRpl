@@ -92,7 +92,7 @@ const prestasiGroups = [
   {
     label: "1 Prestasi",
     title: "",
-    desc: "oleh Hafiz Maulana, Hafief Al Luthfi, Alvin Marliansyah, Fajar Alfa Rizky, dan Andika Setiawan",
+    desc: "oleh Hafiz Maulana, Hafief Al Luthfi, Alvin Marliansyah, Fahrezy, dan Andika Setiawan",
     items: [
       {
         image: "foto/p7.jpeg",
