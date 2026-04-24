@@ -7,31 +7,31 @@ const spotlightCards = [
   {
     title: "X RPL 1",
     label: "Berawal dari Kelas",
-    desc: "Awal perjalanan dimulai di SMKN 1 Karang Baru, tepatnya di kelas X RPL 1, dengan wali kelas Ibu Rini Deliana, S.T., M.Pd.",
+    desc: "Awal perjalanan dimulai di SMKN 1 Karang Baru, tepatnya di kelas X RPL 1 bersama Ibu Rini Deliana, S.T., M.Pd., saat kami mulai beradaptasi dan mengenal satu sama lain.",
     image: "foto/default.jpeg",
   },
   {
     title: "X RPL 2",
     label: "Berawal dari Kelas",
-    desc: "Awal perjalanan dimulai di SMKN 1 Karang Baru, tepatnya di kelas X RPL 2, dengan wali kelas Ibu Lenni Harahap, S.Pd.",
+    desc: "Di kelas X RPL 2 bersama Ibu Lenni Harahap, S.Pd., cerita lain juga tumbuh dengan warna dan pengalaman yang berbeda.",
     image: "foto/rpl2.jpeg",
   },
   {
     title: "XI RPL 1",
     label: "Kisah dimulai pada kelas",
-    desc: "Kisah kami dimulai pada kelas XI, saat kami dipersatukan di kelas XI RPL 1 dengan wali kelas Ibu Hanifah, S.Pd.",
+    desc: "Kami akhirnya dipertemukan di kelas XI RPL 1 bersama Ibu Hanifah, S.Pd., dan mulai menjadi satu keluarga yang lebih solid.",
     image: "foto/XI.jpeg",
   },
   {
     title: "XI RPL 1 dan XII RPL 1",
-    label: "Berkarya di Lab",
-    desc: "berkarya dan menikmati pembelajaran coding bersama bapak coding kami yaitu bapak Safrizal, S. ST",
+    label: "Belajar coding",
+    desc: "Bersama Pak Safrizal, S.ST., kami belajar coding—meski penuh error, tapi penuh pelajaran dan proses.",
     image: "foto/lab.jpeg",
   },
   {
     title: "XII RPL 1",
     label: "Berakhir di kelas",
-    desc: "Perjalanan kami berakhir di kelas XII RPL 1 bersama ibu coding sekaligus wali kelas kami yaitu ibu Linda Hariani Nasution, S. Si",
+    desc: "Hingga di akhir, kami menutup perjalanan di kelas XII RPL 1 bersama Ibu Linda Hariani, S.Si., dengan kenangan yang tak terlupakan.",
     image: "foto/XII.jpeg",
   },
 ];

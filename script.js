@@ -26,7 +26,7 @@ const members = [
     bio: "Nadya Febriasari berperan mencatat dan merapikan informasi agar administrasi kelas tetap tertata.",
   },
   {
-    name: "Syarifah Sabrina",
+    name: "Syarifah Shabrina",
     role: "Bendahara",
     urutan: 4,
     hobby: "Public speaking, management",
@@ -64,7 +64,7 @@ const members = [
     bio: "Alvin Marliansyah menjadi bagian dari anggota yang mendukung aktivitas kelas.",
   },
   {
-    name: "Hafis Maulana",
+    name: "Hafiz Maulana",
     role: "Anggota Kelas",
     urutan: 8,
     hobby: "Drawing, imajinasi tinggi dan membuat meme",
@@ -92,12 +92,12 @@ const members = [
     imageModal: "foto/hafif-bg.png",
   },
   {
-    name: "Salwa Khalisa",
+    name: "Salwa Khalisha",
     role: "Anggota Kelas",
     urutan: 11,
     hobby: "Memahami materi, berhitung",
     humor: "Teliti, mandiri",
-    bio: "Salwa Khalisa tercantum sebagai anggota kelas dengan tampilan kartu individual.",
+    bio: "Salwa Khalisha tercantum sebagai anggota kelas dengan tampilan kartu individual.",
   },
   {
     name: "T Rizka Namira",
@@ -108,7 +108,7 @@ const members = [
     bio: "T Rizka Namira merupakan anggota kelas yang dimasukkan ke daftar lengkap dashboard.",
   },
   {
-    name: "Nadia Kaputri",
+    name: "Nadya Kaputri",
     role: "Anggota Kelas",
     urutan: 13,
     hobby: "Memahami materi, berhitung",
@@ -158,7 +158,7 @@ const members = [
     bio: "Dinda Mustakillah menjadi salah satu kartu anggota dalam struktur kelas.",
   },
   {
-    name: "Wan Cahaya Balkis",
+    name: "Wan Cahaya Balqis",
     role: "Anggota Kelas",
     urutan: 19,
     hobby: "Menulis, membaca",
