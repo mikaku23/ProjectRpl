@@ -590,6 +590,19 @@ body.modal-open {
   flex-direction: column;
 }
 
+#tentang .section-heading {
+  max-width: 100%;
+}
+
+#tentang .section-heading p {
+  max-width: 100%;
+}
+#tentang .section-heading p {
+  max-width: 100%;
+  line-height: 1.9;
+  text-align: justify;
+}
+
 @media (max-width: 640px) {
   main, .site-header, .site-footer {
     width: calc(100% - 12px);

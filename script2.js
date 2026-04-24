@@ -25,7 +25,7 @@ const spotlightCards = [
   {
     title: "XI RPL 1 dan XII RPL 1",
     label: "Belajar coding",
-    desc: "Bersama Pak Safrizal, S.ST., kami belajar coding—meski penuh error, tapi penuh pelajaran dan proses.",
+    desc: "Bersama Pak Safrizal, S.ST., kami belajar coding meski penuh error, tapi penuh pelajaran dan proses.",
     image: "foto/lab.jpeg",
   },
   {

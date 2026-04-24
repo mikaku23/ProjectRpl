@@ -1,11 +1,11 @@
 const members = [
   {
-    name: "Fajar Alfa Rizki",
+    name: "Fajar Alfa Rizky",
     role: "Ketua Kelas",
     urutan: 1,
     hobby: "Memimpin, mengorganisir",
     humor: "Tegas, bertanggung jawab",
-    bio: "Fajar Alfa Rizki menjadi pusat koordinasi kelas dan berada pada posisi utama dalam struktur XII RPL 1.",
+    bio: "Kelas bisa apa tanpa aku",
   },
   {
     name: "Muhammad Haliq Maulana",
@@ -100,7 +100,7 @@ const members = [
     role: "Anggota Kelas",
     urutan: 11,
     hobby: "Memahami materi, berhitung",
-    humor: "Teliti, mandiri",
+    humor: "Teliti, mandiri, ISTJ",
     bio: "Salwa Khalisha tercantum sebagai anggota kelas dengan tampilan kartu individual.",
     image: "foto/salwa.jpeg", // untuk card
     imageModal: "foto/salwa-bg.png",
@@ -158,12 +158,14 @@ const members = [
     bio: "Mawaddah ditampilkan sebagai anggota kelas pada daftar utama.",
   },
   {
-    name: "Dinda Mustakillah",
+    name: "Dinda Musthakillah",
     role: "Anggota Kelas",
     urutan: 18,
     hobby: "Mengelola catatan",
     humor: "Konsisten, fokus",
-    bio: "Dinda Mustakillah menjadi salah satu kartu anggota dalam struktur kelas.",
+    bio: "Dinda Musthakillah menjadi salah satu kartu anggota dalam struktur kelas.",
+    image: "foto/dinda.png",
+    imageModal: "foto/dinda-bg.png",
   },
   {
     name: "Wan Cahaya Balqis",
