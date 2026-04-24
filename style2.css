@@ -96,13 +96,38 @@
 }
 
 /* ===== PERBAIKAN UTAMA ===== */
+/* ===== PERBAIKAN UTAMA ===== */
 .spotlight-text {
   width: 100%;
-  max-height: 70%;        /* batas tinggi */
-  overflow: hidden;       /* cegah keluar card */
   transform: translateY(20px);
   opacity: 0;
   transition: 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* text */
+.spotlight-text h4 {
+  margin: 0;
+  font-size: 1.1rem;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* judul max 1 baris */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.spotlight-text p {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.75);
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* desktop */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* label */
@@ -113,24 +138,6 @@
   background: rgba(255, 255, 255, 0.12);
   font-size: 0.75rem;
   margin-bottom: 8px;
-}
-
-/* text */
-.spotlight-text h4 {
-  margin: 0;
-  font-size: 1.1rem;
-}
-
-.spotlight-text p {
-  margin: 6px 0 0;
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.75);
-
-  /* clamp teks */
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 /* ===== Hover Effect ===== */
@@ -196,15 +203,15 @@
   .spotlight-text h4 {
     font-size: 0.9rem;
     line-height: 1.2;
+    -webkit-line-clamp: 1;
   }
 
   .spotlight-text p {
     font-size: 0.75rem;
     line-height: 1.4;
-    -webkit-line-clamp: 2; /* lebih ketat di mobile */
+    -webkit-line-clamp: 2; /* mobile lebih pendek */
   }
 }
-
 /* ===== Active State (CLICK) ===== */
 .spotlight-card.active {
   transform: translateY(-6px) scale(1.02);
