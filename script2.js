@@ -5,34 +5,34 @@ const rail = document.querySelector(".spotlight-rail");
 
 const spotlightCards = [
   {
-    title: "Langkah Terarah",
-    label: "Identitas 01",
-    desc: "Kartu ini menampilkan karakter yang rapi, tenang, dan konsisten dalam menjaga ritme kerja.",
+    title: "X RPL 1",
+    label: "Berawal dari Kelas",
+    desc: "Awal perjalanan dimulai di SMKN 1 Karang Baru, tepatnya di kelas X RPL 1, dengan wali kelas Ibu Rini Deliana, S.T., M.Pd.",
     image: "foto/default.jpeg",
   },
   {
-    title: "Ruang Fokus",
-    label: "Identitas 02",
-    desc: "Tampilan dibuat modern, bersih, dan menonjolkan kesan aktif saat kartu dibuka.",
-    image: "foto/default.jpeg",
+    title: "X RPL 2",
+    label: "Berawal dari Kelas",
+    desc: "Awal perjalanan dimulai di SMKN 1 Karang Baru, tepatnya di kelas X RPL 2, dengan wali kelas Ibu Lenni Harahap, S.Pd.",
+    image: "foto/rpl2.jpeg",
   },
   {
-    title: "Pusat Ide",
-    label: "Identitas 03",
-    desc: "Efek blur dan teks naik digunakan untuk memberi kesan premium dan interaktif.",
-    image: "foto/default.jpeg",
+    title: "XI RPL 1",
+    label: "Kisah dimulai pada kelas",
+    desc: "Kisah kami dimulai pada kelas XI, saat kami dipersatukan di kelas XI RPL 1 dengan wali kelas Ibu Hanifah, S.Pd.",
+    image: "foto/XI.jpeg",
   },
   {
-    title: "Arah Baru",
-    label: "Identitas 04",
-    desc: "Kartu bergerak perlahan ke samping agar tampilan terasa hidup tanpa terlalu ramai.",
-    image: "foto/default.jpeg",
+    title: "XI RPL 1 dan XII RPL 1",
+    label: "Berkarya di Lab",
+    desc: "berkarya dan menikmati pembelajaran coding bersama bapak coding kami yaitu bapak Safrizal, S. ST",
+    image: "foto/lab.jpeg",
   },
   {
-    title: "Jejak Prestasi",
-    label: "Identitas 05",
-    desc: "Setiap kartu memiliki identitas visual yang berbeda, tetapi tetap satu gaya dengan tema utama.",
-    image: "foto/default.jpeg",
+    title: "XII RPL 1",
+    label: "Berakhir di kelas",
+    desc: "Perjalanan kami berakhir di kelas XII RPL 1 bersama ibu coding sekaligus wali kelas kami yaitu ibu Linda Hariani Nasution, S. Si",
+    image: "foto/XII.jpeg",
   },
 ];
 
