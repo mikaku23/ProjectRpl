@@ -95,8 +95,11 @@
   padding: 14px;
 }
 
+/* ===== PERBAIKAN UTAMA ===== */
 .spotlight-text {
   width: 100%;
+  max-height: 70%;        /* batas tinggi */
+  overflow: hidden;       /* cegah keluar card */
   transform: translateY(20px);
   opacity: 0;
   transition: 0.3s ease;
@@ -122,6 +125,12 @@
   margin: 6px 0 0;
   font-size: 0.9rem;
   color: rgba(255,255,255,0.75);
+
+  /* clamp teks */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* ===== Hover Effect ===== */
@@ -168,17 +177,34 @@
   }
 
   .spotlight-card {
-    width: 240px; /* tetap 16:9 */
+    width: 240px;
+  }
+
+  .spotlight-overlay {
+    padding: 10px;
+  }
+
+  .spotlight-kicker {
+    font-size: 0.65rem;
+    padding: 4px 8px;
+  }
+
+  .spotlight-text {
+    transform: translateY(12px);
   }
 
   .spotlight-text h4 {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.2;
   }
 
   .spotlight-text p {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    -webkit-line-clamp: 2; /* lebih ketat di mobile */
   }
 }
+
 /* ===== Active State (CLICK) ===== */
 .spotlight-card.active {
   transform: translateY(-6px) scale(1.02);
@@ -203,17 +229,19 @@
 .spotlight-card.active::after {
   opacity: 1;
 }
+
 /* PRIORITAS ACTIVE DI ATAS HOVER */
 .spotlight-card.active:hover .spotlight-text {
   transform: translateY(0);
   opacity: 1;
 }
 
-/* SAAT TIDAK ACTIVE, hover tetap normal */
+/* SAAT TIDAK ACTIVE */
 .spotlight-card:not(.active):hover .spotlight-text {
   transform: translateY(0);
   opacity: 1;
 }
+
 .spotlight-card:not(.active):not(:hover) .spotlight-text {
   transform: translateY(20px);
   opacity: 0;
