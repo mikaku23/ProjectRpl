@@ -47,7 +47,7 @@
   width: max-content;
 }
 
-/* ===== Card 16:9 ===== */
+/* ===== Card ===== */
 .spotlight-card {
   position: relative;
   width: 320px;
@@ -96,9 +96,10 @@
 }
 
 /* ===== PERBAIKAN UTAMA ===== */
-/* ===== PERBAIKAN UTAMA ===== */
 .spotlight-text {
   width: 100%;
+  max-height: 80%;
+  overflow-y: auto;
   transform: translateY(20px);
   opacity: 0;
   transition: 0.3s ease;
@@ -108,26 +109,30 @@
   gap: 4px;
 }
 
+/* scrollbar dalam card */
+.spotlight-text::-webkit-scrollbar {
+  width: 4px;
+}
+
+.spotlight-text::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 999px;
+}
+
 /* text */
 .spotlight-text h4 {
   margin: 0;
   font-size: 1.1rem;
-
-  display: -webkit-box;
-  -webkit-line-clamp: 1; /* judul max 1 baris */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  line-height: 1.3;
 }
 
 .spotlight-text p {
   margin: 6px 0 0;
   font-size: 0.9rem;
   color: rgba(255,255,255,0.75);
+  line-height: 1.5;
 
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* desktop */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* label */
@@ -198,21 +203,21 @@
 
   .spotlight-text {
     transform: translateY(12px);
+    max-height: 75%;
   }
 
   .spotlight-text h4 {
     font-size: 0.9rem;
     line-height: 1.2;
-    -webkit-line-clamp: 1;
   }
 
   .spotlight-text p {
     font-size: 0.75rem;
     line-height: 1.4;
-    -webkit-line-clamp: 2; /* mobile lebih pendek */
   }
 }
-/* ===== Active State (CLICK) ===== */
+
+/* ===== Active State ===== */
 .spotlight-card.active {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
@@ -237,13 +242,7 @@
   opacity: 1;
 }
 
-/* PRIORITAS ACTIVE DI ATAS HOVER */
-.spotlight-card.active:hover .spotlight-text {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/* SAAT TIDAK ACTIVE */
+/* interaction */
 .spotlight-card:not(.active):hover .spotlight-text {
   transform: translateY(0);
   opacity: 1;
