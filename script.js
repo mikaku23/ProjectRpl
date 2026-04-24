@@ -112,6 +112,8 @@ const members = [
     hobby: "Menulis, berhitung",
     humor: "Ceria, ramah",
     bio: "T Rizka Namira merupakan anggota kelas yang dimasukkan ke daftar lengkap dashboard.",
+    image: "foto/rizka.png", // untuk card
+    imageModal: "foto/rizka-bg.png",
   },
   {
     name: "Nadya Kaputri",
@@ -140,6 +142,8 @@ const members = [
     hobby: "Membaca, menulis",
     humor: "Ceria, aktif",
     bio: "Rani Bila Aulia menjadi salah satu anggota yang ditampilkan dalam kartu tersendiri.",
+    image: "foto/rani.jpeg", // untuk card
+    imageModal: "foto/rani-bg.png",
   },
   {
     name: "Salsabila Zahra",
@@ -148,6 +152,8 @@ const members = [
     hobby: "Menulis ide, mendukung kerja tim",
     humor: "Ceria, humoris",
     bio: "Salsabila Zahra merupakan bagian dari data anggota kelas XII RPL 1.",
+    image: "foto/caca.jpeg", // untuk card
+    imageModal: "foto/caca-bg.png",
   },
   {
     name: "Mawaddah",
@@ -182,6 +188,8 @@ const members = [
     hobby: "Menulis, membaca",
     humor: "Ceria, penolong",
     bio: "Eliza Amanda tampil sebagai bagian dari susunan kelas pada dashboard.",
+    image: "foto/eliza.jpeg", // untuk card
+    imageModal: "foto/eliza-bg.png", // untuk modal (tanpa background)
   },
   {
     name: "Naila Aisyah Rinaldi",

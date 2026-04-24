@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>XII RPL 1 | Dashboard Kelas</title>
+  <title>Website RPL 1</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="style2.css" />
   <link rel="stylesheet" href="stylePrestasi.css" />
+  <link rel="stylesheet" href="styleAlbum.css" />
+  <link rel="icon" type="image/png" href="foto/iconkelas.png">
 </head>
 <body>
   <div class="page-bg"></div>
@@ -25,6 +27,7 @@
       <a href="#tentang" class="nav-link" data-section="tentang">Tentang</a>
       <a href="#prestasi" class="nav-link" data-section="prestasi">Prestasi</a>
       <a href="#anggota" class="nav-link" data-section="anggota">Anggota</a>
+      <a href="#album" class="nav-link" data-section="album">Album</a>
     </nav>
   </header>
 
@@ -151,11 +154,49 @@ XII RPL 1 bukan sekadar ruang belajar, tetapi proses yang terus berkembang. Dimu
 
       <div class="member-list glass" id="member-list"></div>
     </section>
+
+    <section id="album" class="section">
+  <div class="section-heading">
+    <span class="eyebrow">Album</span>
+    <h2>Dokumentasi foto kelas</h2>
+    <p>Bagian ini menampilkan kumpulan foto kelas dalam kartu yang dapat digeser ke samping.</p>
+  </div>
+
+  <div class="album-section glass">
+    <div class="album-head">
+      <span class="eyebrow">Kenangan Kelas</span>
+      <h3>Album foto XI/XII RPL 1</h3>
+      <p>Geser ke samping untuk melihat seluruh dokumentasi.</p>
+    </div>
+
+    <div class="album-rail">
+      <div class="album-track" id="album-track"></div>
+    </div>
+  </div>
+</section>
   </main>
 
-  <footer class="site-footer">
-   <p>© Made with ❤️ by XI/XII RPL 1 | <i>Built with logic, and dedication by Muhammad Haliq Maulana</i> | SMK Negeri 1 Karang Baru</p>
-  </footer>
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>
+      © Made with ❤️ by XI/XII RPL 1 |
+      <i>Built with logic, and dedication by Muhammad Haliq Maulana</i> |
+      SMK Negeri 1 Karang Baru
+    </p>
+
+    <a href="https://www.instagram.com/rplinfinity" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="footer-ig"
+       aria-label="Instagram RPL Infinity">
+       
+      <!-- ICON INSTAGRAM (SVG, lebih stabil dari png) -->
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M7.75 2h8.5C19.99 2 22 4.01 22 6.75v8.5C22 17.99 19.99 20 16.25 20h-8.5C4.01 20 2 17.99 2 15.25v-8.5C2 4.01 4.01 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5C4 18.32 5.68 20 7.75 20h8.5c2.07 0 3.75-1.68 3.75-3.75v-8.5C20 5.68 18.32 4 16.25 4h-8.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm5.25-.88a1.13 1.13 0 100 2.26 1.13 1.13 0 000-2.26z"/>
+      </svg>
+    </a>
+  </div>
+</footer>
 
   <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
     <div class="modal glass" role="dialog" aria-modal="true" aria-labelledby="modal-name">
@@ -192,5 +233,6 @@ XII RPL 1 bukan sekadar ruang belajar, tetapi proses yang terus berkembang. Dimu
   <script src="script.js"></script>
   <script src="script2.js"></script>
   <script src="scriptPrestasi.js"></script>
+  <script src="scriptAlbum.js"></script>
 </body>
 </html>

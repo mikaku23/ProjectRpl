@@ -807,3 +807,44 @@ body.modal-open {
     font-size: 0.8rem;
   }
 }
+
+/* ===== Footer Layout Update ===== */
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ===== Instagram Icon ===== */
+.footer-ig {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  transition: 0.25s ease;
+}
+
+.footer-ig svg {
+  width: 22px;
+  height: 22px;
+}
+
+.footer-ig:hover {
+  background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
