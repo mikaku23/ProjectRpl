@@ -238,30 +238,19 @@
 /* ===== Responsive ===== */
 @media (max-width: 640px) {
   .album-head {
-    position: relative;
-    min-height: 180px;
-    padding: 14px;
-    overflow: hidden;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+   display: none;
   }
 
   .album-head-left {
-    position: absolute;
-    left: 14px;
-    bottom: 14px;
-    max-width: 40%;
-    padding: 5px;
+   display: none;
   }
 
   .album-head-left h3 {
-    font-size: 0.7rem;
+    display: none;
   }
 
   .album-head-left p {
-    font-size: 0.3rem;
-    line-height: 1;
+    display: none;
   }
 
   .music-control {
