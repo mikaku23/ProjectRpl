@@ -251,9 +251,18 @@
   }
 
   .album-head-left {
-    max-width: 100%;
-    padding: 12px;
+  max-width: 75%;   /* diperkecil */
+  padding: 10px;    /* lebih compact */
   }
+
+  .album-head-left h3 {
+  font-size: 1.05rem;
+}
+
+.album-head-left p {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
 
   .music-control {
     align-self: flex-end;
