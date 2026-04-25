@@ -210,6 +210,10 @@
     height: 160px;
   }
 
+  .album-card__img {
+    height: 160px; /* lebih kecil di mobile */
+  }
+
   .album-card__overlay {
     padding: 12px;
   }
