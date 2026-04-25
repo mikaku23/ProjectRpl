@@ -238,11 +238,17 @@
 /* ===== Responsive ===== */
 @media (max-width: 640px) {
   .album-head {
-   display: none;
+    position: relative;
+    min-height: 180px;
+    padding: 14px;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   .album-head-left {
-   display: none;
+    display: none;
   }
 
   .album-head-left h3 {
