@@ -848,3 +848,38 @@ body.modal-open {
     text-align: center;
   }
 }
+
+/* Animasi muncul saat scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px) scale(0.99);
+  filter: blur(6px);
+  transition:
+    opacity 0.45s ease-out,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.45s ease-out;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+@media (max-width: 640px) {
+  .reveal {
+    transition-duration: 0.35s;
+    transform: translateY(14px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}

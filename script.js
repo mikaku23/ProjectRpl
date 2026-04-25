@@ -308,7 +308,7 @@ function renderMemberList() {
 }
 
 function openModal(member) {
-modalImage.src = getMemberImage(member, "modal");
+  modalImage.src = getMemberImage(member, "modal");
   modalRole.textContent = member.role;
   modalName.textContent = member.name;
   modalNickname.textContent = `urutan ${member.urutan} · ${member.humor}`;
@@ -346,3 +346,41 @@ document.addEventListener("keydown", (event) => {
 
 renderDashboard();
 renderMemberList();
+initScrollReveal();
+
+function initScrollReveal() {
+  const targets = document.querySelectorAll(`
+    .section-heading,
+    .spotlight-section,
+    .stats-row .stat-card,
+    .card-grid .member-card,
+    .two-column .info-card,
+    .member-list .member-row,
+    .prestasi-section,
+    .album-section
+  `);
+
+  targets.forEach((el, index) => {
+    el.classList.add("reveal");
+    el.style.setProperty("--reveal-delay", `${(index % 6) * 60}ms`);
+  });
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.08,
+      rootMargin: "0px 0px -5% 0px",
+    },
+  );
+
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+}
+
+window.addEventListener("load", initScrollReveal);

@@ -90,6 +90,7 @@ function renderAlbum() {
 }
 
 renderAlbum();
+initScrollReveal();
 
 // ================= AUDIO CONTROL + PROGRESS =================
 
