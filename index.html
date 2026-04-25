@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="stylePrestasi.css" />
   <link rel="stylesheet" href="styleAlbum.css" />
   <link rel="icon" type="image/png" href="foto/iconkelas.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <div class="page-bg"></div>
@@ -177,36 +179,32 @@ XII RPL 1 bukan sekadar ruang belajar, tetapi proses yang terus berkembang. Dimu
   </div>
 
   <div class="album-section glass">
-    <div class="album-head">
-      <div class="album-head-left">
-        <span class="eyebrow">Kenangan Kelas</span>
-        <h3>Album foto XI/XII RPL 1</h3>
-        <p>Geser ke samping untuk melihat seluruh dokumentasi dan klik untuk informasi lebih lanjut.</p>
-      </div>
+   <div class="album-head">
+  <div class="album-head-left">
+    <span class="eyebrow">Kenangan Kelas</span>
+    <h3>Album foto XI/XII RPL 1</h3>
+    <p>Geser ke samping untuk melihat seluruh dokumentasi dan klik untuk informasi lebih lanjut.</p>
+  </div>
 
-     <button id="music-toggle" class="music-toggle" type="button">
-  <svg class="progress-ring" width="44" height="44">
-    <circle
-      class="progress-bg"
-      cx="22"
-      cy="22"
-      r="18"
-      stroke-width="3"
-      fill="transparent"
-    />
-    <circle
-      class="progress-bar"
-      cx="22"
-      cy="22"
-      r="18"
-      stroke-width="3"
-      fill="transparent"
-    />
-  </svg>
+  <div class="music-control">
+    <span id="music-time" class="music-time">00:00</span>
 
-  <span class="music-icon">▶</span>
-</button>
-    </div>
+    <button id="music-toggle" class="music-toggle" type="button" aria-label="Play music">
+      <svg class="progress-ring" width="44" height="44">
+        <circle class="progress-bg" cx="22" cy="22" r="18" stroke-width="3" fill="transparent"></circle>
+        <circle class="progress-bar" cx="22" cy="22" r="18" stroke-width="3" fill="transparent"></circle>
+      </svg>
+
+      <span class="music-icon">
+        <i class="fa-solid fa-play"></i>
+      </span>
+    </button>
+  </div>
+</div>
+
+<audio id="album-music" preload="none">
+  <source src="audio/lagu2.mpeg" type="audio/mpeg">
+</audio>
 
     <audio id="album-music" loop preload="none">
       <source src="audio/lagu2.mpeg" type="audio/mpeg">

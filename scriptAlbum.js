@@ -91,24 +91,42 @@ function renderAlbum() {
 
 renderAlbum();
 initScrollReveal();
-
-// ================= AUDIO CONTROL + PROGRESS =================
+// ================= AUDIO =================
 
 const music = document.getElementById("album-music");
 const toggleBtn = document.getElementById("music-toggle");
 const icon = toggleBtn?.querySelector(".music-icon");
 const progressBar = document.querySelector(".progress-bar");
+const timeDisplay = document.getElementById("music-time");
 
 let isPlaying = false;
 let playPending = false;
 
-// keliling lingkaran: 2πr, r = 18
 const circumference = 2 * Math.PI * 18;
+
+function formatTime(seconds) {
+  if (!seconds || seconds < 0) return "00:00";
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60);
+  return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+}
 
 function setPlayingState(playing) {
   isPlaying = playing;
+
   if (icon) {
-    icon.textContent = playing ? "❚❚" : "▶";
+    icon.innerHTML = playing
+      ? '<i class="fa-solid fa-pause"></i>'
+      : '<i class="fa-solid fa-play"></i>';
+  }
+
+  if (toggleBtn) {
+    toggleBtn.classList.toggle("playing", playing);
+  }
+
+  // ⬇️ ini bagian penting: kontrol teks
+  if (timeDisplay && !playing && music.currentTime === 0) {
+    timeDisplay.textContent = "play";
   }
 }
 
@@ -123,17 +141,23 @@ function updateProgress() {
     return;
 
   const progress = music.currentTime / music.duration;
-  const offset = circumference * (1 - progress);
-  progressBar.style.strokeDashoffset = offset;
+  progressBar.style.strokeDashoffset = circumference * (1 - progress);
+
+  if (timeDisplay) {
+    const remaining = music.duration - music.currentTime;
+    timeDisplay.textContent = formatTime(remaining);
+  }
 }
 
-if (music && toggleBtn && icon && progressBar) {
+if (music && toggleBtn && icon && progressBar && timeDisplay) {
   music.volume = 0.3;
 
-  // set awal progress ring
   progressBar.style.strokeDasharray = `${circumference}`;
   resetProgress();
+
+  // ⬇️ state awal
   setPlayingState(false);
+  timeDisplay.textContent = "play";
 
   toggleBtn.addEventListener("click", async () => {
     try {
@@ -153,12 +177,21 @@ if (music && toggleBtn && icon && progressBar) {
     }
   });
 
-  music.addEventListener("loadedmetadata", updateProgress);
+  music.addEventListener("loadedmetadata", () => {
+    resetProgress();
+  });
+
   music.addEventListener("timeupdate", updateProgress);
 
   music.addEventListener("ended", () => {
     setPlayingState(false);
     resetProgress();
+
+    if (timeDisplay) {
+      timeDisplay.textContent = "00:00";
+    }
+
+    music.currentTime = 0;
   });
 
   window.addEventListener("scroll", () => {
