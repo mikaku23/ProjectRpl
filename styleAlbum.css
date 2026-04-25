@@ -252,7 +252,7 @@
   }
 
   .album-head-left h3 {
-    display: none;
+font-size: 0.7rem;
   }
 
   .album-head-left p {
