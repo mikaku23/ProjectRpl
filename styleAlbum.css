@@ -256,12 +256,12 @@
   }
 
   .album-head-left h3 {
-    font-size: 1.05rem;
+    font-size: 0.7rem;
   }
 
   .album-head-left p {
-    font-size: 0.8rem;
-    line-height: 1.4;
+    font-size: 0.3rem;
+    line-height: 1;
   }
 
   .music-control {
