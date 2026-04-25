@@ -47,6 +47,8 @@
 
   backdrop-filter: blur(10px);
   transition: 0.25s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .music-toggle:hover {
@@ -92,6 +94,7 @@
   background: rgba(255, 255, 255, 0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .album-card:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
@@ -100,11 +103,10 @@
 /* ===== Image ===== */
 .album-card__img {
   display: block;
-  height: 200px;   /* hanya tinggi dikontrol */
-  width: auto;     /* lebar ikut rasio asli */
+  height: 200px;
+  width: auto;
   object-fit: cover;
   border-radius: 22px;
-
   transform: scale(1.04);
   transition: transform 0.4s ease, filter 0.35s ease;
 }
@@ -205,13 +207,8 @@
     max-width: calc(100% - 56px);
   }
 
-  .album-card {
-    width: 240px;
-    height: 160px;
-  }
-
   .album-card__img {
-    height: 160px; /* lebih kecil di mobile */
+    height: 160px;
   }
 
   .album-card__overlay {
@@ -227,26 +224,26 @@
     line-height: 1.45;
   }
 }
-/* ===== PROGRESS RING ===== */
-.music-toggle {
-  position: relative;
-}
 
+/* ===== PROGRESS RING ===== */
 .progress-ring {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   transform: rotate(-90deg);
 }
 
 .progress-bg {
-  stroke: rgba(255,255,255,0.15);
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 3;
 }
 
 .progress-bar {
+  fill: none;
   stroke: #00d4ff;
+  stroke-width: 3;
   stroke-linecap: round;
-  stroke-dasharray: 113; /* 2πr ≈ 113 */
+  stroke-dasharray: 113;
   stroke-dashoffset: 113;
   transition: stroke-dashoffset 0.1s linear;
 }
