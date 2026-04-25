@@ -132,7 +132,7 @@ XII RPL 1 bukan sekadar ruang belajar, tetapi proses yang terus berkembang. Dimu
       <div class="prestasi-section glass">
         <div class="prestasi-head">
           <span class="eyebrow">Prestasi Kelas</span>
-          <h3>Total 16 Prestasi Kelas XI/XII RPL 1</h3>
+          <h3>Total 17 Prestasi Kelas XI/XII RPL 1</h3>
           <p>Klik kartu untuk melihat detail.</p>
         </div>
 
@@ -169,7 +169,7 @@ XII RPL 1 bukan sekadar ruang belajar, tetapi proses yang terus berkembang. Dimu
       <div class="member-list glass" id="member-list"></div>
     </section>
 
-    <section id="album" class="section">
+   <section id="album" class="section">
   <div class="section-heading">
     <span class="eyebrow">Album</span>
     <h2>Dokumentasi foto kelas</h2>
@@ -178,10 +178,39 @@ XII RPL 1 bukan sekadar ruang belajar, tetapi proses yang terus berkembang. Dimu
 
   <div class="album-section glass">
     <div class="album-head">
-      <span class="eyebrow">Kenangan Kelas</span>
-      <h3>Album foto XI/XII RPL 1</h3>
-      <p>Geser ke samping untuk melihat seluruh dokumentasi dan klik untuk informasi lebih lanjut.</p>
+      <div class="album-head-left">
+        <span class="eyebrow">Kenangan Kelas</span>
+        <h3>Album foto XI/XII RPL 1</h3>
+        <p>Geser ke samping untuk melihat seluruh dokumentasi dan klik untuk informasi lebih lanjut.</p>
+      </div>
+
+     <button id="music-toggle" class="music-toggle" type="button">
+  <svg class="progress-ring" width="44" height="44">
+    <circle
+      class="progress-bg"
+      cx="22"
+      cy="22"
+      r="18"
+      stroke-width="3"
+      fill="transparent"
+    />
+    <circle
+      class="progress-bar"
+      cx="22"
+      cy="22"
+      r="18"
+      stroke-width="3"
+      fill="transparent"
+    />
+  </svg>
+
+  <span class="music-icon">▶</span>
+</button>
     </div>
+
+    <audio id="album-music" loop preload="none">
+      <source src="audio/lagu2.mpeg" type="audio/mpeg">
+    </audio>
 
     <div class="album-rail">
       <div class="album-track" id="album-track"></div>

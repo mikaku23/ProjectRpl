@@ -91,6 +91,20 @@ const prestasiGroups = [
   },
   {
     label: "1 Prestasi",
+    title: "Alvin Marliansyah",
+    desc: "Siswa SMK Negeri 1 Karang Baru",
+    items: [
+      {
+        image: "foto/p14.jpeg",
+        name: "Futsal",
+        competition:
+          "Lomba Futsal Antar Pelajar Kabupaten Aceh Tamiang Tahun 2025",
+        award: "20 Oktober 2025",
+      },
+    ],
+  },
+  {
+    label: "1 Prestasi",
     title: "",
     desc: "oleh Hafiz Maulana, Hafief Al Luthfi, Alvin Marliansyah, Fahrezy, dan Andika Setiawan",
     items: [

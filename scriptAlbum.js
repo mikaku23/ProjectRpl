@@ -90,3 +90,90 @@ function renderAlbum() {
 }
 
 renderAlbum();
+
+// ================= AUDIO CONTROL + PROGRESS =================
+
+const music = document.getElementById("album-music");
+const toggleBtn = document.getElementById("music-toggle");
+const icon = toggleBtn?.querySelector(".music-icon");
+const progressBar = document.querySelector(".progress-bar");
+
+let isPlaying = false;
+let playPending = false;
+
+// keliling lingkaran: 2πr, r = 18
+const circumference = 2 * Math.PI * 18;
+
+function setPlayingState(playing) {
+  isPlaying = playing;
+  if (icon) {
+    icon.textContent = playing ? "❚❚" : "▶";
+  }
+}
+
+function resetProgress() {
+  if (progressBar) {
+    progressBar.style.strokeDashoffset = circumference;
+  }
+}
+
+function updateProgress() {
+  if (!music || !progressBar || !music.duration || Number.isNaN(music.duration))
+    return;
+
+  const progress = music.currentTime / music.duration;
+  const offset = circumference * (1 - progress);
+  progressBar.style.strokeDashoffset = offset;
+}
+
+if (music && toggleBtn && icon && progressBar) {
+  music.volume = 0.3;
+
+  // set awal progress ring
+  progressBar.style.strokeDasharray = `${circumference}`;
+  resetProgress();
+  setPlayingState(false);
+
+  toggleBtn.addEventListener("click", async () => {
+    try {
+      if (!isPlaying) {
+        playPending = true;
+        await music.play();
+        setPlayingState(true);
+      } else {
+        music.pause();
+        setPlayingState(false);
+      }
+    } catch (err) {
+      console.warn("Audio gagal diputar:", err);
+      setPlayingState(false);
+    } finally {
+      playPending = false;
+    }
+  });
+
+  music.addEventListener("loadedmetadata", updateProgress);
+  music.addEventListener("timeupdate", updateProgress);
+
+  music.addEventListener("ended", () => {
+    setPlayingState(false);
+    resetProgress();
+  });
+
+  window.addEventListener("scroll", () => {
+    if (!isPlaying || playPending) return;
+
+    const section = document.getElementById("album");
+    if (!section) return;
+
+    const rect = section.getBoundingClientRect();
+    const keluar = rect.bottom < 0 || rect.top > window.innerHeight;
+
+    if (keluar) {
+      music.pause();
+      setPlayingState(false);
+    }
+  });
+} else {
+  console.warn("Elemen audio atau tombol play belum lengkap.");
+}

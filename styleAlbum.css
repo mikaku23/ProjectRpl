@@ -7,7 +7,15 @@
 }
 
 .album-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
   margin-bottom: 14px;
+}
+
+.album-head-left {
+  max-width: calc(100% - 64px);
 }
 
 .album-head h3 {
@@ -19,6 +27,31 @@
   margin: 8px 0 0;
   color: var(--muted);
   line-height: 1.7;
+}
+
+.music-toggle {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.10);
+  color: white;
+  font-size: 18px;
+
+  backdrop-filter: blur(10px);
+  transition: 0.25s ease;
+}
+
+.music-toggle:hover {
+  background: rgba(255, 255, 255, 0.20);
+  transform: scale(1.08);
 }
 
 /* ===== Horizontal Scroll ===== */
@@ -43,12 +76,12 @@
 
 .album-track {
   display: flex;
-  align-items: flex-end; /* penting agar card beda tinggi tetap rata bawah */
+  align-items: flex-end;
   gap: 16px;
   width: max-content;
 }
 
-/* ===== Card (UPDATED) ===== */
+/* ===== Card ===== */
 .album-card {
   position: relative;
   flex: 0 0 auto;
@@ -59,25 +92,24 @@
   background: rgba(255, 255, 255, 0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* hover tetap */
 .album-card:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
 }
 
-/* ===== Image (CORE CHANGE) ===== */
+/* ===== Image ===== */
 .album-card__img {
   display: block;
-  height: 200px;     /* tinggi konsisten */
-  width: auto;       /* lebar mengikuti rasio */
+  height: 200px;   /* hanya tinggi dikontrol */
+  width: auto;     /* lebar ikut rasio asli */
   object-fit: cover;
   border-radius: 22px;
+
   transform: scale(1.04);
   transition: transform 0.4s ease, filter 0.35s ease;
 }
 
-/* ===== Overlay tetap bekerja walau ukuran beda ===== */
+/* ===== Overlay ===== */
 .album-card::before {
   content: "";
   position: absolute;
@@ -98,7 +130,6 @@
   filter: blur(2px) brightness(0.82);
 }
 
-/* ===== Overlay Content ===== */
 .album-card__overlay {
   position: absolute;
   inset: 0;
@@ -144,7 +175,6 @@
   line-height: 1.55;
 }
 
-/* border glow */
 .album-card::after {
   content: "";
   position: absolute;
@@ -167,8 +197,17 @@
     padding: 14px;
   }
 
-  .album-card__img {
-    height: 160px; /* lebih kecil di mobile */
+  .album-head {
+    gap: 12px;
+  }
+
+  .album-head-left {
+    max-width: calc(100% - 56px);
+  }
+
+  .album-card {
+    width: 240px;
+    height: 160px;
   }
 
   .album-card__overlay {
@@ -183,4 +222,33 @@
     font-size: 0.78rem;
     line-height: 1.45;
   }
+}
+/* ===== PROGRESS RING ===== */
+.music-toggle {
+  position: relative;
+}
+
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+}
+
+.progress-bg {
+  stroke: rgba(255,255,255,0.15);
+}
+
+.progress-bar {
+  stroke: #00d4ff;
+  stroke-linecap: round;
+  stroke-dasharray: 113; /* 2πr ≈ 113 */
+  stroke-dashoffset: 113;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.music-icon {
+  position: relative;
+  z-index: 2;
+  font-size: 18px;
 }
