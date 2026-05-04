@@ -299,9 +299,9 @@
 
 @media (max-width: 480px) {
   .chat-popup {
-    width: 88%;
-    right: 6%;
-    left: 6%;
+    width: 78%;
+    right: 4%;
+    left: auto;
     bottom: 70px;
 
     height: 52vh; /* lebih kecil */
@@ -311,7 +311,7 @@
   }
 
   #floating-chat button {
-    width: 20px;
+    width: 50px;
     height: 50px;
   }
 
