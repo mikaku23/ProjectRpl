@@ -162,6 +162,8 @@ const members = [
     hobby: "Drawing, berimajinasi",
     humor: "Bijak, teliti",
     bio: "Mawaddah ditampilkan sebagai anggota kelas pada daftar utama.",
+    image: "foto/mawad.png",
+    imageModal: "foto/mawad-bg.png",
   },
   {
     name: "Dinda Musthakillah",
