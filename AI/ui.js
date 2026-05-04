@@ -51,28 +51,6 @@ export function initUI() {
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
 
-  function typeMessage(text) {
-    const el = document.createElement("div");
-    el.className = "msg bot";
-    chatMessages.appendChild(el);
-
-    let i = 0;
-    const speed = 18;
-
-    function typing() {
-      el.textContent = text.slice(0, i++);
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-
-      if (i <= text.length) {
-        setTimeout(typing, speed);
-      } else {
-        el.classList.add("enter");
-      }
-    }
-
-    typing();
-  }
-
   function createTyping() {
     const wrap = document.createElement("div");
     wrap.className = "typing-wrapper";
@@ -241,7 +219,7 @@ export function initUI() {
       await new Promise((r) => setTimeout(r, 450));
       await removeTyping(typingNode);
 
-typeMessage(result.reply);
+      appendMessage(result.reply, "bot");
 
       if (result.section) {
         navigateToSection(result.section);
@@ -256,11 +234,12 @@ typeMessage(result.reply);
     }
   }
 
-function initialBotIntro() {
-  typeMessage(
-    "Halo. Chat ini khusus untuk informasi sekolah, kelas, anggota, prestasi, album, dan perjalanan 3 tahun.",
-  );
-}
+  function initialBotIntro() {
+    appendMessage(
+      "Halo. Chat ini khusus untuk informasi sekolah, kelas, anggota, prestasi, album, dan perjalanan 3 tahun.",
+      "bot",
+    );
+  }
 
   toggleBtn.addEventListener("click", () => {
     if (popup.classList.contains("ready")) {
