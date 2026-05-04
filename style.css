@@ -429,6 +429,10 @@ main {
   position: relative;
   transform: scale(0.97);
   transition: transform 0.24s ease;
+   max-height: 90vh; /* kunci utama */
+     display: flex;
+  flex-direction: column;
+  overflow: hidden; /* supaya tidak bocor */
 }
 
 .modal-backdrop.open .modal {
@@ -453,6 +457,8 @@ main {
   grid-template-columns: 320px minmax(0, 1fr);
   gap: 18px;
   align-items: stretch;
+   overflow-y: auto; /* ini yang bikin scroll */
+  padding-right: 6px; /* biar tidak ketutup scrollbar */
 }
 
 .modal-image-wrap {
@@ -477,9 +483,20 @@ main {
 }
 
 .modal-content {
+   overflow-y: auto;
+  max-height: 80vh;
   padding: 8px 6px 8px 2px;
 }
+.modal-content::-webkit-scrollbar,
+.modal-body::-webkit-scrollbar {
+  width: 6px;
+}
 
+.modal-content::-webkit-scrollbar-thumb,
+.modal-body::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 999px;
+}
 .modal-badge {
   display: inline-flex;
   align-items: center;
@@ -766,11 +783,18 @@ body.modal-open {
   .modal {
     padding: 12px;
     border-radius: 18px;
+     max-height: 92vh;
+  }
+
+   .modal-content {
+    max-height: none;
+    overflow-y: auto;
   }
 
   .modal-body {
     grid-template-columns: 1fr;
     gap: 12px;
+    overflow-y: auto;
   }
 
   .modal-image-wrap {

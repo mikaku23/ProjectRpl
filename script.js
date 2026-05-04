@@ -6,6 +6,9 @@ const members = [
     hobby: "Memimpin, mengorganisir",
     humor: "Tegas, bertanggung jawab",
     bio: "Kelas bisa apa tanpa aku",
+    prestasi: [
+      "Juara 3 dan 5 Lomba Kihajar STEM Tingkat Provinsi Aceh Tahun 2024",
+    ],
   },
   {
     name: "Muhammad Haliq Maulana",
@@ -16,6 +19,11 @@ const members = [
     bio: "Aku admin besar (kalau pajar ga datang)",
     image: "foto/haliq.jpeg", // untuk card
     imageModal: "foto/haliq-bg.png", // untuk modal (tanpa background)
+    prestasi: [
+      "Excelent from 15 participants in the competition In National",
+      "Juara 1 Lomba IT Software Solution For Bussiness Tingkat Provinsi Aceh tahun 2025",
+      "Juara 3 Lomba Kihajar STEM Tingkat Provinsi Aceh Tahun 2024",
+    ],
   },
   {
     name: "Nadya Febriasari",
@@ -26,6 +34,7 @@ const members = [
     bio: "Nadya Febriasari berperan mencatat dan merapikan informasi agar administrasi kelas tetap tertata.",
     image: "foto/nadya.jpeg", // untuk card
     imageModal: "foto/nadya-bg.png",
+    prestasi: [],
   },
   {
     name: "Syarifah Shabrina",
@@ -36,6 +45,11 @@ const members = [
     bio: "Tempat setor uang + pusat kendali keuangan kelas. Dari kumpul dana, booking, sampai pembayaran biar aku yang urus, kalian tinggal nikmatin acara. Intinya kalian yang patungan, saya yang pusing",
     image: "foto/sabrina.jpeg", // untuk card
     imageModal: "foto/sabrina-bg.png",
+    prestasi: [
+      "Duta Lingkungan Kabupaten Aceh Tamiang Putri",
+      "Juara 1 Monolog",
+      "Juara 5 Lomba Kihajar STEM Tingkat Provinsi Aceh Tahun 2024",
+    ],
   },
   {
     name: "Angga Saputra",
@@ -46,6 +60,7 @@ const members = [
     bio: "Angga Saputra merupakan bagian dari struktur anggota kelas XII RPL 1.",
     image: "foto/angga.jpeg", // untuk card
     imageModal: "foto/angga-bg.png",
+    prestasi: ["Juara 5 Lomba Kihajar STEM Tingkat Provinsi Aceh Tahun 2024"],
   },
   {
     name: "Andika Setiawan",
@@ -56,6 +71,7 @@ const members = [
     bio: "Andika Setiawan terdaftar sebagai anggota kelas dengan peran yang sama pentingnya dalam dinamika kelas.",
     image: "foto/dika.jpeg", // untuk card
     imageModal: "foto/dika-bg.png",
+    prestasi: [],
   },
   {
     name: "Alvin Marliansyah",
@@ -66,6 +82,7 @@ const members = [
     bio: "Alvin Marliansyah menjadi bagian dari anggota yang mendukung aktivitas kelas.",
     image: "foto/alpin.jpeg", // untuk card
     imageModal: "foto/alpin-bg.png",
+    prestasi: ["Futsal", "E Sport Mobile Legends"],
   },
   {
     name: "Hafiz Maulana",
@@ -76,6 +93,7 @@ const members = [
     bio: "Hafis Maulana termasuk anggota kelas XII RPL 1 yang terdata dalam daftar resmi.",
     image: "foto/hafis.jpeg", // untuk card
     imageModal: "foto/hafis-bg.png",
+    prestasi: ["E Sport Mobile Legends"],
   },
   {
     name: "Fahrezi",
@@ -84,6 +102,7 @@ const members = [
     hobby: "bermain gim strategi",
     humor: "Ceria, lincah",
     bio: "Fahrezi tercatat sebagai anggota kelas dengan identitas yang ditampilkan pada daftar anggota.",
+    prestasi: ["E Sport Mobile Legends"],
   },
   {
     name: "Hafief Al Luthfi",
@@ -94,6 +113,7 @@ const members = [
     bio: "Hafief Al Luthfi menjadi bagian dari anggota yang mewakili kelas XII RPL 1.",
     image: "foto/hafif.png", // untuk card
     imageModal: "foto/hafif-bg.png",
+    prestasi: ["E Sport Mobile Legends"],
   },
   {
     name: "Salwa Khalisha",
@@ -104,6 +124,7 @@ const members = [
     bio: "Salwa Khalisha tercantum sebagai anggota kelas dengan tampilan kartu individual.",
     image: "foto/salwa.jpeg", // untuk card
     imageModal: "foto/salwa-bg.png",
+    prestasi: ["Juara 3 Lomba Kihajar STEM Tingkat Provinsi Aceh Tahun 2024"],
   },
   {
     name: "T Rizka Namira",
@@ -114,6 +135,7 @@ const members = [
     bio: "T Rizka Namira merupakan anggota kelas yang dimasukkan ke daftar lengkap dashboard.",
     image: "foto/rizka.png", // untuk card
     imageModal: "foto/rizka-bg.png",
+    prestasi: [],
   },
   {
     name: "Nadya Kaputri",
@@ -124,6 +146,7 @@ const members = [
     bio: "Nadia Kaputri menempati satu kartu khusus pada tampilan anggota kelas.",
     image: "foto/kaput.jpeg", // untuk card
     imageModal: "foto/kaput-bg.png",
+    prestasi: [],
   },
   {
     name: "Sri Mutia Wahyuni",
@@ -134,6 +157,12 @@ const members = [
     bio: "Sri Mutia Wahyuni termasuk bagian dari susunan lengkap kelas XII RPL 1.",
     image: "foto/sri.jpeg", // untuk card
     imageModal: "foto/sri-bg.png",
+    prestasi: [
+      "Paskibraka Kabupaten Aceh Tamiang tahun 2024",
+      "Juara 1 Lomba Atletik",
+      "Paskibraka Lomba Lentera class three",
+      "Juara 3 Lomba Kihajar STEM Tingkat Provinsi Aceh Tahun 2024",
+    ],
   },
   {
     name: "Rani Bila Aulia",
@@ -144,6 +173,7 @@ const members = [
     bio: "Rani Bila Aulia menjadi salah satu anggota yang ditampilkan dalam kartu tersendiri.",
     image: "foto/rani.jpeg", // untuk card
     imageModal: "foto/rani-bg.png",
+    prestasi: [],
   },
   {
     name: "Salsabila Zahra",
@@ -154,6 +184,7 @@ const members = [
     bio: "Salsabila Zahra merupakan bagian dari data anggota kelas XII RPL 1.",
     image: "foto/caca.jpeg", // untuk card
     imageModal: "foto/caca-bg.png",
+    prestasi: ["Lomba Badminton"],
   },
   {
     name: "Mawaddah",
@@ -164,6 +195,7 @@ const members = [
     bio: "Mawaddah ditampilkan sebagai anggota kelas pada daftar utama.",
     image: "foto/mawad.png",
     imageModal: "foto/mawad-bg.png",
+    prestasi: [],
   },
   {
     name: "Dinda Musthakillah",
@@ -174,6 +206,7 @@ const members = [
     bio: "Dinda Musthakillah menjadi salah satu kartu anggota dalam struktur kelas.",
     image: "foto/dinda.png",
     imageModal: "foto/dinda-bg.png",
+    prestasi: [],
   },
   {
     name: "Wan Cahaya Balqis",
@@ -182,6 +215,7 @@ const members = [
     hobby: "Menulis, membaca",
     humor: "Ramah, kreatif ",
     bio: "Wan Cahaya Balkis tercatat sebagai anggota kelas XII RPL 1.",
+    prestasi: [],
   },
   {
     name: "Eliza Amanda",
@@ -192,6 +226,7 @@ const members = [
     bio: "Eliza Amanda tampil sebagai bagian dari susunan kelas pada dashboard.",
     image: "foto/eliza.jpeg", // untuk card
     imageModal: "foto/eliza-bg.png", // untuk modal (tanpa background)
+    prestasi: [],
   },
   {
     name: "Naila Aisyah Rinaldi",
@@ -200,6 +235,7 @@ const members = [
     hobby: "Mencari informasi, menulis",
     humor: "Ceria, kreatif",
     bio: "Naila Aisyah Rinaldi menutup daftar siswa lengkap XII RPL 1 pada tampilan ini.",
+    prestasi: [],
   },
 ];
 
@@ -214,6 +250,7 @@ const modalNickname = document.getElementById("modal-nickname");
 const modalHobby = document.getElementById("modal-hobby");
 const modalHumor = document.getElementById("modal-humor");
 const modalBio = document.getElementById("modal-bio");
+const modalPrestasi = document.getElementById("modal-prestasi");
 
 const pinurutans = new Set([1, 2, 3, 4]);
 
@@ -317,6 +354,16 @@ function openModal(member) {
   modalHobby.textContent = member.hobby;
   modalHumor.textContent = member.humor;
   modalBio.textContent = member.bio;
+
+  // render prestasi
+  if (member.prestasi && member.prestasi.length > 0) {
+    modalPrestasi.innerHTML = member.prestasi
+      .map((item) => `<li>${item}</li>`)
+      .join("");
+  } else {
+    modalPrestasi.innerHTML = `<li>Tidak ada prestasi</li>`;
+  }
+
   modalBackdrop.classList.add("open");
   document.body.classList.add("modal-open");
   modalBackdrop.setAttribute("aria-hidden", "false");
@@ -326,6 +373,8 @@ function closeModal() {
   modalBackdrop.classList.remove("open");
   document.body.classList.remove("modal-open");
   modalBackdrop.setAttribute("aria-hidden", "true");
+
+  modalPrestasi.innerHTML = "";
 }
 
 document.addEventListener("click", (event) => {
