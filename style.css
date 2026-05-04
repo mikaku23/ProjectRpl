@@ -429,10 +429,11 @@ main {
   position: relative;
   transform: scale(0.97);
   transition: transform 0.24s ease;
-   max-height: 90vh; /* kunci utama */
-     display: flex;
+
+  height: min(90vh, 820px); /* penting: fix tinggi */
+  display: flex;
   flex-direction: column;
-  overflow: hidden; /* supaya tidak bocor */
+  overflow: hidden; /* kunci agar scroll tidak keluar */
 }
 
 .modal-backdrop.open .modal {
@@ -444,6 +445,9 @@ main {
   top: 14px;
   right: 14px;
   width: 42px;
+
+  z-index: 10;
+
   height: 42px;
   border: none;
   border-radius: 14px;
@@ -456,9 +460,10 @@ main {
   display: grid;
   grid-template-columns: 320px minmax(0, 1fr);
   gap: 18px;
-  align-items: stretch;
-   overflow-y: auto; /* ini yang bikin scroll */
-  padding-right: 6px; /* biar tidak ketutup scrollbar */
+
+  flex: 1;            /* penting: isi ruang tersisa */
+  min-height: 0;      /* penting untuk scroll flex */
+  overflow: hidden;   /* jangan scroll di sini */
 }
 
 .modal-image-wrap {
@@ -483,8 +488,8 @@ main {
 }
 
 .modal-content {
-   overflow-y: auto;
-  max-height: 80vh;
+  overflow-y: auto;
+  max-height: 100%;
   padding: 8px 6px 8px 2px;
 }
 .modal-content::-webkit-scrollbar,

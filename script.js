@@ -360,9 +360,7 @@ function openModal(member) {
     modalPrestasi.innerHTML = member.prestasi
       .map((item) => `<li>${item}</li>`)
       .join("");
-  } else {
-    modalPrestasi.innerHTML = `<li>Tidak ada prestasi</li>`;
-  }
+  } 
 
   modalBackdrop.classList.add("open");
   document.body.classList.add("modal-open");
