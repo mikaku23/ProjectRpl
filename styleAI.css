@@ -299,15 +299,37 @@
 
 @media (max-width: 480px) {
   .chat-popup {
-    width: 92%;
-    right: 4%;
-    left: 4%;
-    bottom: 80px;
-    height: 60vh;
+    width: 88%;
+    right: 6%;
+    left: 6%;
+    bottom: 70px;
+
+    height: 52vh; /* lebih kecil */
+    max-height: 420px; /* batasi agar tidak terlalu tinggi */
+
+    border-radius: 14px;
   }
 
-  #floating-chat {
-    right: 16px;
-    bottom: 16px;
+  #floating-chat button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .chat-header {
+    padding: 10px 12px;
+  }
+
+  .chat-messages {
+    padding: 10px;
+  }
+
+  #chat-input {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  #chat-send {
+    padding: 8px 10px;
+    font-size: 13px;
   }
 }
