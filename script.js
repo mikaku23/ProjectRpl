@@ -360,7 +360,12 @@ function openModal(member) {
     modalPrestasi.innerHTML = member.prestasi
       .map((item) => `<li>${item}</li>`)
       .join("");
-  } 
+
+    modalPrestasi.parentElement.style.display = "block";
+  } else {
+    modalPrestasi.innerHTML = "";
+    modalPrestasi.parentElement.style.display = "none";
+  }
 
   modalBackdrop.classList.add("open");
   document.body.classList.add("modal-open");
