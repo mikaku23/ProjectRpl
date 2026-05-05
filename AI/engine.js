@@ -860,7 +860,7 @@ function buildResponse(message) {
 
   // --- 3. GREETING ---
   if (
-    /^(halo|hai|hei|hey|hallo|haloo|pagi|siang|sore|malam|permisi|apa kabar|hai bot|halo bot|assalamu alaikum|assalamualaikum|selamat pagi|selamat siang|selamat sore|selamat malam)$/.test(
+    /^(hi|halo|hai|hei|hey|hallo|haloo|pagi|siang|sore|malam|permisi|apa kabar|hai bot|halo bot|assalamu alaikum|assalamualaikum|selamat pagi|selamat siang|selamat sore|selamat malam)$/.test(
       msg,
     )
   ) {
