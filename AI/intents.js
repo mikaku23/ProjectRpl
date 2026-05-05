@@ -3,6 +3,7 @@ export const intents = [
     name: "greeting",
     section: null,
     keywords: [
+      "hi",
       "halo",
       "hai",
       "hei",
