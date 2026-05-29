@@ -863,7 +863,7 @@ function buildResponse(message) {
     /^(hi|halo|hai|hei|hey|hallo|haloo|pagi|siang|sore|malam|permisi|apa kabar|hai bot|halo bot|assalamu alaikum|assalamualaikum|selamat pagi|selamat siang|selamat sore|selamat malam)$/.test(
       msg,
     )
-  ) {
+  ) { 
     const reply = getGreetingResponse();
     setContext({ lastIntent: "greeting", lastEntity: null, lastSection: null });
     return {
